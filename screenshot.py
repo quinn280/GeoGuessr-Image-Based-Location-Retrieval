@@ -59,6 +59,3 @@ def save_crops(mode):
     compass_im.save(compass_path)
 
     im.close()
-
-
-save_crops("chrome_nmpz")
