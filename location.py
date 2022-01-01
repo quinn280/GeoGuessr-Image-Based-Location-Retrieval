@@ -4,7 +4,7 @@ class Location:
     """
 
     # Static Variable, Estimated Heading
-    estimated_heading = "n/a"
+    estimated_heading = "N/A"
 
     def __init__(self, latitude, longitude, heading, file_path):
         """
@@ -15,8 +15,8 @@ class Location:
         self.heading = heading
         self.file_path = file_path
 
-        self.proximity = r"n\a"
-        self.CBIR_score = r"n\a"
+        self.proximity = "N/A"
+        self.CBIR_score = "N/A"
 
     def coordinate_str(self):
         return f"{self.latitude}, {self.longitude}"
@@ -40,8 +40,8 @@ class Location:
         """
         Resets proximity and CBIR score
         """
-        self.proximity = r"n\a"
-        self.CBIR_score = r"n\a"
+        self.proximity = "N/A"
+        self.CBIR_score = "N/A"
 
     def __str__(self):
         """
