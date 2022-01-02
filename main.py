@@ -35,6 +35,35 @@ def set_up(loc_folder):
     return location_list
 
 
+def find_match(location_list):
+    """
+    Searches location list for a match and displays information about match if found
+    :param location_list: a list of locations sorted by proximity
+    :return: n/a
+    """
+    search_count = 0
+    for loc in location_list:
+        # Calculate CBIR Score
+        loc.CBIR_score = CBIR.get_score(SEARCH_PATH, loc.file_path)
+        search_count += 1
+
+        # If score is under threshold, print location information and exit loop
+        if loc.CBIR_score < CBIR_THRESHOLD:
+            print('Match Found!\n')
+            print(f"Searches: {search_count}")
+            print(loc)
+            pyperclip.copy(loc.google_map_link())
+            break
+
+        # If 'proximity' values reach end of search range, print 'No match' and exit loop
+        if loc.proximity > (PROX_RANGE / 2):
+            print('No match\n')
+            print(f"Searches: {search_count}")
+            print(f"Estimated Heading: {Location.estimated_heading}")
+            pyperclip.copy('No match')
+            break
+
+
 def find_location(location_list):
     """
     Prints information for game location if found
@@ -58,40 +87,11 @@ def find_location(location_list):
     location_list.sort(key=lambda x: x.proximity)
     time_log.add_stamp("Update & Sort")
 
-    # Iterate through location objects until match is found or until end of search range
-    search_count = 0
-    for loc in location_list:
-        # Calculate CBIR Score
-        loc.CBIR_score = CBIR.get_score(SEARCH_PATH, loc.file_path)
-        search_count += 1
-
-        # If score is under threshold, print location information and exit loop
-        if loc.CBIR_score < CBIR_THRESHOLD:
-            print('Match Found!\n')
-            print(f"Searches: {search_count}")
-            print(loc)
-            pyperclip.copy(loc.google_map_link())
-            break
-
-        # If 'proximity' values reach end of search range, print 'No match' and exit loop
-        if loc.proximity > (PROX_RANGE / 2):
-            print('No match\n')
-            print(f"Searches: {search_count}")
-            print(f"Estimated Heading: {Location.estimated_heading}")
-            pyperclip.copy('No match')
-            # response = pyip.inputYesNo(prompt="(For Testing Purposes) Search for match?")
-            # if response == 'yes':
-            #     filename = pyip.inputStr("Input Filename to search")
-            #     file_path = os.path.join(TEMP_LOCATION_FOLDER, filename+".png")
-            #     for loc2 in location_list:
-            #         if file_path == loc2.file_path:
-            #             loc2.CBIR_score = CBIR.get_score(SEARCH_PATH, loc2.file_path)
-            #             print(loc2)
-
-            break
+    # Search for location match, display location info if found
+    find_match(location_list)
+    time_log.add_stamp("CBIR")
 
     # Display how long each portion of finding the location took
-    time_log.add_stamp("CBIR")
     time_log.print()
 
     # Reset 'proximity' and 'CBIRscore' instance variables
