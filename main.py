@@ -78,7 +78,7 @@ def find_location(location_list):
             print('No match\n')
             print(f"Searches: {search_count}")
             print(f"Estimated Heading: {Location.estimated_heading}")
-            pyperclip.copy('')
+            pyperclip.copy('No match')
             # response = pyip.inputYesNo(prompt="(For Testing Purposes) Search for match?")
             # if response == 'yes':
             #     filename = pyip.inputStr("Input Filename to search")
