@@ -40,6 +40,7 @@ The program uses a database of location images from the diverse world map.
 5. Use the google map link in reference with the game map to pinpoint the exact location. 
 6. When ready, navigate to the next location and repeat steps 3-5. Remember to stay in Fullscreen mode. 
 7. When done playing, hit 'q' to quit. 
+
 Note: If you have multiple displays, consider pasting the google map link in a different window as opposed to clicking the link and opening it in the same window as the game. This prevents repeated toggling back and forth between full screen and regular. 
 
 **Methodology**
