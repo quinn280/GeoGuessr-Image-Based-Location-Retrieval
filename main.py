@@ -35,30 +35,12 @@ def set_up(loc_folder):
     return location_list
 
 
-def find_location(location_list):
+def find_match(location_list):
     """
-    Prints information for game location if found
-    :param location_list: a list of location objects
+    Searches location list for a match and displays information about match if found
+    :param location_list: a list of locations sorted by proximity
     :return: n/a
     """
-    print("\nSearching....")
-    time_log = TimeLog()
-
-    # Screenshot game location
-    screenshot.save_crops()
-    time_log.add_stamp("Screenshot")
-
-    # Calculate estimated compass heading
-    Location.estimated_heading = compass.estimate_heading(COMPASS_PATH)
-    time_log.add_stamp("Compass")
-
-    # Calculate and update 'proximity' instant variables, then sort by proximity
-    for loc in location_list:
-        loc.update_proximity()
-    location_list.sort(key=lambda x: x.proximity)
-    time_log.add_stamp("Update & Sort")
-
-    # Iterate through location objects until match is found or until end of search range
     search_count = 0
     for loc in location_list:
         # Calculate CBIR Score
@@ -90,8 +72,35 @@ def find_location(location_list):
 
             break
 
-    # Display how long each portion of finding the location took
+
+def find_location(location_list):
+    """
+    Prints information for game location if found
+    :param location_list: a list of location objects
+    :return: n/a
+    """
+    print("\nSearching....")
+    time_log = TimeLog()
+
+    # Screenshot game location
+    screenshot.save_crops()
+    time_log.add_stamp("Screenshot")
+
+    # Calculate estimated compass heading
+    Location.estimated_heading = compass.estimate_heading(COMPASS_PATH)
+    time_log.add_stamp("Compass")
+
+    # Calculate and update 'proximity' instant variables, then sort by proximity
+    for loc in location_list:
+        loc.update_proximity()
+    location_list.sort(key=lambda x: x.proximity)
+    time_log.add_stamp("Update & Sort")
+
+    # Search for location match, display location info if found
+    find_match(location_list)
     time_log.add_stamp("CBIR")
+
+    # Display how long each portion of finding the location took
     time_log.print()
 
     # Reset 'proximity' and 'CBIRscore' instance variables
