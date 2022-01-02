@@ -35,7 +35,7 @@ The program uses a database of location images from the diverse world map.
 
 1. Ensure items from the user set-up section are followed correctly. If not, the program will continually return "No match found". 
 2. Enter in the path to the location database when prompted. 
-3. When ready press 'y' to search for the location. 
+3. Ensure no window is blocking the game. When ready press 'y' to search for the location. 
 4. If a match is found, the program will print the google map link as well as copy it to your clipboard. 
 5. Use the google map link in reference with the game map to pinpoint the exact location. 
 6. When ready, navigate to the next location and repeat steps 3-5. Remember to stay in Fullscreen mode. 
