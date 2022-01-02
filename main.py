@@ -4,13 +4,14 @@ import screenshot
 import CBIR
 import os
 import compass
+import pyperclip
 from location import Location
 from timelog import TimeLog
 
-#TEMP_LOCATION_FOLDER = r"C:\Users\quinn\OneDrive\Pictures\CBIRhub\geoguessr adw location images"
+# Global Variables
 COMPASS_PATH = r"project_images\screenshots\compass.png"
 SEARCH_PATH = r"project_images\screenshots\search_square.png"
-SS_MODE = "chrome_nmpz"
+SS_MODE = "chrome_nmpz_laptop_fullscreen"
 CBIR_THRESHOLD = 15
 PROX_RANGE = 5
 
@@ -44,7 +45,7 @@ def find_location(location_list):
     time_log = TimeLog()
 
     # Screenshot game location
-    screenshot.save_crops(SS_MODE)
+    screenshot.save_crops()
     time_log.add_stamp("Screenshot")
 
     # Calculate estimated compass heading
@@ -69,6 +70,7 @@ def find_location(location_list):
             print('Match Found!\n')
             print(f"Searches: {search_count}")
             print(loc)
+            pyperclip.copy(loc.google_map_link())
             break
 
         # If 'proximity' values reach end of search range, print 'No match' and exit loop
@@ -76,6 +78,7 @@ def find_location(location_list):
             print('No match\n')
             print(f"Searches: {search_count}")
             print(f"Estimated Heading: {Location.estimated_heading}")
+            pyperclip.copy('')
             # response = pyip.inputYesNo(prompt="(For Testing Purposes) Search for match?")
             # if response == 'yes':
             #     filename = pyip.inputStr("Input Filename to search")
@@ -97,11 +100,14 @@ def find_location(location_list):
 
 
 def main():
+    # Set up location list from location folder
+    print("Important: Read User Guide in README file to ensure program runs successfully\n")
     location_folder = pyip.inputFilepath(prompt="Enter in path to directory of location images: ")
     print("Setting up...")
     location_list = set_up(location_folder)
     print('Ready')
 
+    # Main Loop
     while True:
         keyboard.wait('3')
         find_location(location_list)

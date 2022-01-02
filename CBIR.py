@@ -28,8 +28,8 @@ def normalize(arr):
 def get_score(img1, img2):
     """
     Returns similarity score for 2 images
-    :param img1:
-    :param img2:
+    :param img1: a file path to an image
+    :param img2: a file path to an image
     :return: Similarity score (manhattan norm per pixel)
     """
     img1 = normalize(to_grayscale(imread(img1).astype(float)))

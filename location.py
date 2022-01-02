@@ -3,7 +3,6 @@ class Location:
     This class represents a single location
     """
 
-    # Static Variable, Estimated Heading
     estimated_heading = "N/A"
 
     def __init__(self, latitude, longitude, heading, file_path):
