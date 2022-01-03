@@ -1,10 +1,10 @@
 import keyboard
 import pyinputplus as pyip
 import os
+import pyperclip
 import screenshot
 import CBIR
 import compass
-import pyperclip
 from location import Location
 from timelog import TimeLog
 
