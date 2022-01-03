@@ -100,8 +100,12 @@ def find_location(location_list):
 
 
 def main():
+
+    print("Important: If this is your first time using the program please read the read the User Guide in README file.")
+    print("Reminder: This program is for the 'Diverse World Map' on the 'No Panning, Moving or Zooming, "
+          "setting. Remember to toggle on classic compass. \n")
+
     # Set up location list from location folder
-    print("Important: Read User Guide in README file to ensure program runs successfully\n")
     location_folder = pyip.inputFilepath(prompt="Enter in path to directory of location images: ")
     print("Setting up...")
     location_list = set_up(location_folder)
@@ -109,7 +113,17 @@ def main():
 
     # Main Loop
     while True:
-        keyboard.wait('3')
+        # Offer user option to continue or quit
+        response = pyip.inputChoice(['q', 'p'], prompt="\nType 'q' to quit or hit 'p' to proceed: ")
+        if response == 'q':
+            break
+
+        # Wait until user has pressed 0 to search for location
+        print("Ready to find match. Make sure GeoGuessr is in fullscreen and nothing obstructs window. Hit "
+              "0 to search when ready.")
+        keyboard.wait('0')
+
+        # Search for location and print information if found
         find_location(location_list)
 
 
