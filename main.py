@@ -100,7 +100,6 @@ def find_location(location_list):
 
 
 def main():
-
     print("Important: If this is your first time using the program please read the read the User Guide in README file.")
     print("Reminder: This program is for the 'Diverse World Map' on the 'No Panning, Moving or Zooming, "
           "setting. Remember to toggle on classic compass. \n")
