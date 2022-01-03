@@ -34,15 +34,17 @@ The program uses a database of location images from the diverse world map.
 
 **Running the Program**
 
-1. Ensure items from the user set-up section are followed correctly. If not, the program will continually return "No match found". 
-2. Enter in the path to the location database when prompted. 
-3. Ensure no window is blocking the game. When ready press 'y' to search for the location. 
+1. Enter in the path to the location database when prompted. 
+2. Enter 'p'. Bring GeoGuessr to the foreground, enter fullscreen, and minimize any windows obstructing the game. 
+3. Hit 0 when you are ready to search. Wait a moment and then navigate back to the shell. 
 4. If a match is found, the program will print the google map link as well as copy it to your clipboard. 
 5. Use the google map link in reference with the game map to pinpoint the exact location. 
-6. When ready, navigate to the next location and repeat steps 3-5. Remember to stay in Fullscreen mode. 
-7. When done playing, hit 'q' to quit. 
+6. When ready, enter the next round and repeat steps 3-7. 
+7. When done playing, type 'q' to quit. 
 
 Note: If you have multiple displays, consider pasting the google map link in a different window as opposed to clicking the link and opening it in the same window as the game. This prevents repeated toggling back and forth between full screen and regular. 
+
+Note: If you get nonsensical compass estimates or multiple "No matches" in a row than there is likely an issue with one of the steps outlined above. 
 
 **Methodology**
 
