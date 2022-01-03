@@ -1,16 +1,16 @@
 # GeoGuessr Image Based Location Retrieval
 
-**Intro**
+## **Intro**
 
 GeoGuessr is a game that drops you in a random Google Street View location, anywhere in the world. The objective is to determine where you are. If you guess the exact location you'll earn 5000 points and if you guess the opposite side of the world you'll earn 0 points. There are many different modes of playing. This program is specifically for the "No Moving, Panning, or Zooming" mode where you have to guess the location based on a single image. There are also many different maps which have varying focuses such as region or type of location. This program works specifically with the "A Diverse World" map, one of the most popular maps in the game. The map hosts 50,000+ locations and prioritizes having locations from a diverse array of countries. 
 
-**Purpose**
+## **Purpose**
 
 This program retrieves the exact coordinates of the location within second(s). The program returns a google map link which can be used to pinpoint the exact location, allowing the user to earn a perfect score. The program does not access the website in any way, it strictly uses the image of the location provided. 
 
 Demo - Getting a perfect score in GeoGuessr using this program: https://youtu.be/6hiLwD130z4
 
-**User Set Up**
+## **User Set Up**
 
 Display Requirements:
 
@@ -32,7 +32,7 @@ The program uses a database of location images from the diverse world map.
 1. Download here (~250mb): https://drive.google.com/file/d/1NEH0feufXZj_C3yuK2zeZvNZmoubpyVD/view?usp=sharing. 
 2. Extract the folder. Copy the path to the folder (shift-right click and 'copy as path') and save it somewhere. You will need it each time you start the program. 
 
-**Running the Program**
+## **Running the Program**
 
 1. Enter in the path to the location database when prompted. 
 2. Enter 'p'. Bring GeoGuessr to the foreground, enter fullscreen, and minimize any windows obstructing the game. 
@@ -46,7 +46,7 @@ Note: If you have multiple displays, consider pasting the google map link in a d
 
 Note: If you get nonsensical compass estimates or multiple "No matches" in a row than there is likely an issue with one of the steps outlined above. 
 
-**Methodology**
+## **Methodology**
 
 The program works by comparing an image of the game location with the 50,000 images in the location database. Each database image has locational information such as the latitude, longitude, and directional heading. The database was created through web-scraping the game using Selenium. If the game image can be matched with an image in the location database, then the coordinates can be retrieved and a google maps link can be produced. 
 
