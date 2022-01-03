@@ -1,8 +1,8 @@
 import keyboard
 import pyinputplus as pyip
+import os
 import screenshot
 import CBIR
-import os
 import compass
 import pyperclip
 from location import Location
