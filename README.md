@@ -1,5 +1,4 @@
-# geo_project
-GeoGuessr Image Based Location Retrieval
+# GeoGuessr Image Based Location Retrieval
 
 **Intro**
 
