@@ -12,12 +12,12 @@ Demo - Getting a perfect score in GeoGuessr using this program: https://youtu.be
 
 ## **User Set Up**
 
-Display Requirements:
+### Display Requirements:
 
 1. Display should be a 16:9 aspect ratio. 
 2. If you have multiple displays, the geoguessr window should be in your primary display. 
 
-Setting up Geoguessr:
+### Setting up Geoguessr:
 
 1. Purchase GeoGuessr Pro or sign up for a free trial. The free version with 20 minutes of play per day will not work with this program. 
 2. Open up a game of 'A Diverse World'. Link: https://www.geoguessr.com/maps/59a1514f17631e74145b6f47/play
@@ -25,7 +25,7 @@ Setting up Geoguessr:
 4. After you start the game, open the settings, located in the bottom left corner. Toggle on Fullscreen
 5. Also while in the settings, toggle on 'Classic Compass'.
 
-Setting up the Location Database: 
+### Setting up the Location Database: 
 
 The program uses a database of location images from the diverse world map. 
 
