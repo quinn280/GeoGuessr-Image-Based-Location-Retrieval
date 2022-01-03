@@ -39,7 +39,7 @@ The program uses a database of location images from the diverse world map.
 3. Hit 0 when you are ready to search. Wait a moment and then navigate back to the shell. 
 4. If a match is found, the program will print the google map link as well as copy it to your clipboard. 
 5. Use the google map link in reference with the game map to pinpoint the exact location. 
-6. When ready, enter the next round and repeat steps 3-7. 
+6. When ready, enter the next round and repeat steps 2-5. 
 7. When done playing, type 'q' to quit. 
 
 Note: If you have multiple displays, consider pasting the google map link in a different window as opposed to clicking the link and opening it in the same window as the game. This prevents repeated toggling back and forth between full screen and regular. 
