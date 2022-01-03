@@ -1,5 +1,5 @@
 # geo_project
-GeoGuessr Image-Based Location Retrieval
+GeoGuessr Image Based Location Retrieval
 
 **Intro**
 
@@ -9,7 +9,7 @@ GeoGuessr is a game that drops you in a random Google Street View location, anyw
 
 This program retrieves the exact coordinates of the location within second(s). The program returns a google map link which can be used to pinpoint the exact location, allowing the user to earn a perfect score. The program does not access the website in any way, it strictly uses the image of the location provided. 
 
-Demo - Getting a perfect score in GeoGuessr: https://youtu.be/jKdPRZPfQCU
+Demo - Getting a perfect score in GeoGuessr using this program: https://youtu.be/6hiLwD130z4
 
 **User Set Up**
 
