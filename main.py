@@ -11,7 +11,6 @@ from timelog import TimeLog
 # Global Variables
 COMPASS_PATH = r"project_images\screenshots\compass.png"
 SEARCH_PATH = r"project_images\screenshots\search_square.png"
-SS_MODE = "chrome_nmpz_laptop_fullscreen"
 CBIR_THRESHOLD = 15
 PROX_RANGE = 5
 
